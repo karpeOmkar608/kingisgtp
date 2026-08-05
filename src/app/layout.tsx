@@ -14,6 +14,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://getitpacked.com"),
   title: "Get It Packed | Your Brand. Expertly Packed.",
   description:
     "Premium white-label packaging solutions for pulses and grains. Launch your own food brand with customized packaging, your logo, and professional branding. Based in Nashik, Maharashtra.",
@@ -25,10 +26,19 @@ export const metadata: Metadata = {
       "Launch your own food brand with premium white-label packaging solutions for pulses and grains.",
     type: "website",
     locale: "en_IN",
+    url: "https://getitpacked.com",
+    siteName: "Get It Packed",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "https://getitpacked.com",
   },
 };
 
