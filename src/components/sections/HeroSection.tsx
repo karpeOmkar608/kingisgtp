@@ -17,9 +17,9 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden w-full"
       style={{
-        background: "linear-gradient(135deg, #ffffff 0%, #f0fdf4 50%, #dcfce7 100%)",
+        background: "linear-gradient(135deg, #f0fdf4 0%, #e8f5e9 40%, #dcfce7 100%)",
       }}
     >
       {/* Background decoration */}
@@ -181,10 +181,10 @@ export default function HeroSection() {
                 initial={{ opacity: 0, scale: 0.8, x: -10 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ delay: 1.0 }}
-                className="absolute -top-5 -left-6 bg-white rounded-2xl px-4 py-3 shadow-xl border border-green-100 z-10"
+                className="absolute -top-4 -left-4 xl:-left-6 bg-white rounded-2xl px-3 py-2.5 xl:px-4 xl:py-3 shadow-xl border border-green-100 z-10"
               >
-                <p className="font-bold text-sm text-gray-800">100+ Happy Clients</p>
-                <p className="text-xs text-gray-500">across India</p>
+                <p className="font-bold text-xs xl:text-sm text-gray-800">100+ Happy Clients</p>
+                <p className="text-[11px] text-gray-500">across India</p>
               </motion.div>
 
               {/* Floating badge — bottom right */}
@@ -192,10 +192,10 @@ export default function HeroSection() {
                 initial={{ opacity: 0, scale: 0.8, x: 10 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ delay: 1.2 }}
-                className="absolute -bottom-5 -right-6 bg-white rounded-2xl px-4 py-3 shadow-xl border border-green-100 z-10"
+                className="absolute -bottom-4 -right-4 xl:-right-6 bg-white rounded-2xl px-3 py-2.5 xl:px-4 xl:py-3 shadow-xl border border-green-100 z-10"
               >
-                <p className="font-bold text-sm text-gray-800">Custom Branding</p>
-                <p className="text-xs text-gray-500">your logo &amp; design</p>
+                <p className="font-bold text-xs xl:text-sm text-gray-800">Custom Branding</p>
+                <p className="text-[11px] text-gray-500">your logo &amp; design</p>
               </motion.div>
             </div>
 

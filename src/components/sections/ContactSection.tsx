@@ -41,13 +41,13 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 bg-white rounded-3xl shadow-sm border border-gray-100 p-8"
+            className="lg:col-span-3 bg-white rounded-3xl shadow-sm border border-gray-100 p-5 sm:p-8"
           >
             {submitted ? (
               <div className="flex flex-col items-center justify-center h-full py-12 text-center">

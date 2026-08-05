@@ -69,7 +69,7 @@ export default function HowItWorks() {
         <div className="hidden lg:block">
           <div className="relative">
             {/* Connector line */}
-            <div className="absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-[#2E7D32] via-[#4CAF50] to-[#00695C] mx-24" />
+            <div className="absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-[#2E7D32] via-[#4CAF50] to-[#00695C] mx-12 xl:mx-24" />
 
             <div className="grid grid-cols-5 gap-4 relative">
               {steps.map((step, i) => (

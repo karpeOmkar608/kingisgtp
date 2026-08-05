@@ -2,6 +2,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 const faqs = [
   {
@@ -99,7 +100,7 @@ export default function FAQ() {
           <p className="text-gray-500">
             Got a question? We&apos;ve got answers. Still not sure?{" "}
             <a
-              href="https://wa.me/919999999999"
+              href={WHATSAPP_URL}
               className="text-[#2E7D32] font-semibold underline underline-offset-2"
             >
               Ask us on WhatsApp

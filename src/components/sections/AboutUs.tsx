@@ -77,7 +77,7 @@ export default function AboutUs() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="rounded-3xl overflow-hidden aspect-square bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center shadow-2xl">
+            <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center shadow-2xl py-10 lg:aspect-square">
               <div className="text-center p-12">
                 <div className="text-8xl mb-6">🏭</div>
                 <div className="space-y-3">
@@ -104,7 +104,7 @@ export default function AboutUs() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
+              className="hidden sm:block absolute -bottom-5 -left-5 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
             >
               <p className="text-2xl font-extrabold text-[#2E7D32]">Nashik</p>
               <p className="text-xs text-gray-500">Maharashtra, India</p>
@@ -113,7 +113,7 @@ export default function AboutUs() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.6 }}
-              className="absolute -top-6 -right-6 bg-[#2E7D32] rounded-2xl p-4 shadow-xl"
+              className="hidden sm:block absolute -top-5 -right-5 bg-[#2E7D32] rounded-2xl p-4 shadow-xl"
             >
               <p className="text-2xl font-extrabold text-white">B2B</p>
               <p className="text-xs text-green-200">Trusted Partner</p>
