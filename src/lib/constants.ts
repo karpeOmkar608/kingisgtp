@@ -4,7 +4,7 @@ export const WHATSAPP_MESSAGE =
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 export const CONTACT = {
-  email: "hello@getitpacked.in",
+  email: "contactus.getitpacked@gmail.com",
   phone: "+91 76200 57124",
   address: "Nashik, Maharashtra, India",
   hours: "Mon–Sat: 9:00 AM – 7:00 PM IST",
