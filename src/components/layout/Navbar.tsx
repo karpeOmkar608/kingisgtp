@@ -1,8 +1,9 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, Package } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS, WHATSAPP_URL } from "@/lib/constants";
 
 export default function Navbar() {
@@ -31,13 +32,16 @@ export default function Navbar() {
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link href="#home" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-xl bg-[#2E7D32] flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
-              <Package className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-lg text-[#1A1A1A] tracking-tight">
-              Get It <span className="text-[#2E7D32]">Packed</span>
-            </span>
+          <Link href="#home" className="flex items-center group">
+            <Image
+              src="/logo-transparent.png"
+              alt="Get It Packed Logo"
+              width={200}
+              height={70}
+              style={{ width: "auto", height: "56px" }}
+              className="object-contain group-hover:scale-105 transition-transform duration-200"
+              priority
+            />
           </Link>
 
           <ul className="hidden lg:flex items-center gap-1">
@@ -92,9 +96,14 @@ export default function Navbar() {
               className="fixed top-0 right-0 bottom-0 w-72 bg-white z-50 shadow-2xl flex flex-col lg:hidden"
             >
               <div className="flex items-center justify-between p-4 border-b border-gray-100">
-                <span className="font-bold text-lg text-[#1A1A1A]">
-                  Get It <span className="text-[#2E7D32]">Packed</span>
-                </span>
+                <Image
+                  src="/logo-transparent.png"
+                  alt="Get It Packed Logo"
+                  width={160}
+                  height={56}
+                  style={{ width: "auto", height: "40px" }}
+                  className="object-contain"
+                />
                 <button
                   onClick={() => setMobileOpen(false)}
                   className="p-2 rounded-lg hover:bg-gray-100"

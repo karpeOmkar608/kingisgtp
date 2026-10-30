@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Package, MapPin, Phone, Mail } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { NAV_LINKS, CONTACT, WHATSAPP_URL } from "@/lib/constants";
 
 const Instagram = ({ className }: { className?: string }) => (
@@ -34,13 +35,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="#home" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-[#2E7D32] flex items-center justify-center">
-                <Package className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-bold text-lg">
-                Get It <span className="text-[#4CAF50]">Packed</span>
-              </span>
+            <Link href="#home" className="inline-flex mb-5">
+              <Image
+                src="/logo-transparent.png"
+                alt="Get It Packed Logo"
+                width={200}
+                height={70}
+                style={{ width: "auto", height: "52px" }}
+                className="object-contain"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Your Brand. Expertly Packed. Premium white-label packaging
