@@ -2,7 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { MapPin, Clock, Mail, Phone, Send } from "lucide-react";
-import { CONTACT, WHATSAPP_URL } from "@/lib/constants";
+import { CONTACT, WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/constants";
 
 const products = [
   "Toor Dal", "Moong Dal", "Chana Dal", "Urad Dal",
@@ -14,10 +14,47 @@ export default function ContactSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [submitted, setSubmitted] = useState(false);
 
+  const [form, setForm] = useState({
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    product: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const lines = [
+      `Hi Get It Packed! I'd like to send an enquiry.`,
+      ``,
+      `👤 *Name:* ${form.name}`,
+      form.company ? `🏢 *Company:* ${form.company}` : null,
+      `📞 *Phone:* ${form.phone}`,
+      form.email ? `📧 *Email:* ${form.email}` : null,
+      form.product ? `📦 *Product of Interest:* ${form.product}` : null,
+      ``,
+      `💬 *Message:*`,
+      form.message,
+    ]
+      .filter((l) => l !== null)
+      .join("\n");
+
+    const encoded = encodeURIComponent(lines);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, "_blank");
+
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setTimeout(() => {
+      setSubmitted(false);
+      setForm({ name: "", company: "", phone: "", email: "", product: "", message: "" });
+    }, 4000);
   };
 
   return (
@@ -66,8 +103,11 @@ export default function ContactSection() {
                     </label>
                     <input
                       id="name"
+                      name="name"
                       type="text"
                       required
+                      value={form.name}
+                      onChange={handleChange}
                       placeholder="Your name"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#2E7D32] focus:ring-2 focus:ring-green-100 transition-all"
                     />
@@ -78,7 +118,10 @@ export default function ContactSection() {
                     </label>
                     <input
                       id="company"
+                      name="company"
                       type="text"
+                      value={form.company}
+                      onChange={handleChange}
                       placeholder="Your company"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#2E7D32] focus:ring-2 focus:ring-green-100 transition-all"
                     />
@@ -92,8 +135,11 @@ export default function ContactSection() {
                     </label>
                     <input
                       id="phone"
+                      name="phone"
                       type="tel"
                       required
+                      value={form.phone}
+                      onChange={handleChange}
                       placeholder="+91 98765 43210"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#2E7D32] focus:ring-2 focus:ring-green-100 transition-all"
                     />
@@ -104,7 +150,10 @@ export default function ContactSection() {
                     </label>
                     <input
                       id="email"
+                      name="email"
                       type="email"
+                      value={form.email}
+                      onChange={handleChange}
                       placeholder="you@company.com"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#2E7D32] focus:ring-2 focus:ring-green-100 transition-all"
                     />
@@ -117,6 +166,9 @@ export default function ContactSection() {
                   </label>
                   <select
                     id="product"
+                    name="product"
+                    value={form.product}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-700 focus:outline-none focus:border-[#2E7D32] focus:ring-2 focus:ring-green-100 transition-all"
                   >
                     <option value="">Select a product</option>
@@ -132,7 +184,10 @@ export default function ContactSection() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     required
+                    value={form.message}
+                    onChange={handleChange}
                     rows={4}
                     placeholder="Tell us about your requirements — product, quantity, packaging preferences..."
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#2E7D32] focus:ring-2 focus:ring-green-100 transition-all resize-none"
