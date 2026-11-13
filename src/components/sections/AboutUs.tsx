@@ -1,125 +1,58 @@
-"use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { MapPin, Target, Eye } from "lucide-react";
+﻿import Image from "next/image";
+import { ArrowUpRight, MapPin } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function AboutUs() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section id="about" className="py-24 bg-[#F8F9FA]" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          {/* Left — Text */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7 }}
+    <section id="about" className="scroll-mt-20 bg-[#F8F9FA] py-16 sm:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <div>
+          <p className="mb-4 text-sm font-semibold text-[#2E7D32]">About Us</p>
+          <h2 className="mb-5 text-3xl font-extrabold leading-tight text-[#1A1A1A] sm:text-4xl">
+            Your Private-Label Packaging Partner in Nashik
+          </h2>
+          <p className="mb-4 max-w-xl leading-relaxed text-gray-600">
+            Get It Packed helps businesses sell pulses and grains under their
+            own brand. Supply your own product or ask us to help source it,
+            then work with us on a pack that carries your name, logo, and design.
+          </p>
+          <p className="mb-6 max-w-xl leading-relaxed text-gray-600">
+            Tell us which products you want to launch and where you plan to sell
+            them. We can discuss pack sizes, label artwork, and how much of the
+            product you want visible through the pouch.
+          </p>
+          <p className="mb-8 flex items-center gap-2 text-sm text-gray-600">
+            <MapPin className="size-4 shrink-0 text-[#2E7D32]" aria-hidden="true" />
+            Based in Nashik, Maharashtra, India
+          </p>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#2E7D32] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1B5E20]"
           >
-            <span className="inline-block px-4 py-1.5 bg-green-100 text-[#2E7D32] text-sm font-semibold rounded-full mb-4">
-              About Us
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-5 leading-tight">
-              Helping Businesses Build{" "}
-              <span className="text-[#2E7D32]">Their Own Brands</span>
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Get It Packed is a packaging-focused startup based in{" "}
-              <span className="font-semibold text-[#1A1A1A]">
-                Nashik, Maharashtra
-              </span>
-              , dedicated to helping businesses launch and grow their own branded
-              products. We currently specialize in white-label pulses and grains
-              with customized packaging solutions, while building toward becoming
-              a complete packaging partner for businesses across multiple industries.
-            </p>
-
-            {/* Location */}
-            <div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
-              <MapPin className="w-4 h-4 text-[#2E7D32]" />
-              Nashik, Maharashtra, India
-            </div>
-
-            {/* Mission & Vision */}
-            <div className="space-y-4">
-              <div className="flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100">
-                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#2E7D32] flex items-center justify-center">
-                  <Target className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-[#1A1A1A] mb-1">Our Mission</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Empower businesses of every size to launch premium products
-                    with professional packaging, branding, and manufacturing support.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4 p-5 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100">
-                <div className="shrink-0 w-10 h-10 rounded-xl bg-[#1565C0] flex items-center justify-center">
-                  <Eye className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-[#1A1A1A] mb-1">Our Vision</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    To become India&apos;s trusted end-to-end customized packaging
-                    and private-label solutions company.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right — Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center shadow-2xl py-10 lg:aspect-square">
-              <div className="text-center p-12">
-                <div className="text-8xl mb-6">🏭</div>
-                <div className="space-y-3">
-                  {[
-                    "✓ Premium Quality Standards",
-                    "✓ Customized Branding",
-                    "✓ Pan India Delivery",
-                    "✓ Fast Turnaround",
-                    "✓ Dedicated Support",
-                  ].map((text) => (
-                    <div
-                      key={text}
-                      className="bg-white/70 backdrop-blur rounded-full px-5 py-2 text-sm font-semibold text-gray-700"
-                    >
-                      {text}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Floating stats */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.5 }}
-              className="hidden sm:block absolute -bottom-5 -left-5 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
-            >
-              <p className="text-2xl font-extrabold text-[#2E7D32]">Nashik</p>
-              <p className="text-xs text-gray-500">Maharashtra, India</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.6 }}
-              className="hidden sm:block absolute -top-5 -right-5 bg-[#2E7D32] rounded-2xl p-4 shadow-xl"
-            >
-              <p className="text-2xl font-extrabold text-white">B2B</p>
-              <p className="text-xs text-green-200">Trusted Partner</p>
-            </motion.div>
-          </motion.div>
+            Discuss Your Packaging Requirements
+            <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
+          </a>
         </div>
+
+        <figure className="overflow-hidden rounded-3xl border border-green-100 bg-white shadow-sm">
+          <Image
+            src="/products/lentil-pouch.webp"
+            alt="Cream and green lentil pouch with a Your Brand Here label and yellow lentils visible through the window"
+            width={1122}
+            height={1402}
+            sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(100vw - 48px), (max-width: 1279px) calc(50vw - 64px), 576px"
+            className="h-auto w-full"
+          />
+          <figcaption className="p-5 sm:px-6">
+            <h3 className="font-bold text-[#1A1A1A]">Sample pack · Lentils</h3>
+            <p className="mt-1 text-sm leading-relaxed text-gray-600">
+              This mockup pairs a front label for your branding with a clear
+              window that lets shoppers see the lentils.
+            </p>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

@@ -4,15 +4,6 @@ import { WHATSAPP_URL } from "@/lib/constants";
 import { ArrowRight, Sparkles, Star, Package } from "lucide-react";
 import Image from "next/image";
 
-const products = [
-  { emoji: "🌾", name: "Toor Dal" },
-  { emoji: "🫘", name: "Moong Dal" },
-  { emoji: "🌿", name: "Chana Dal" },
-  { emoji: "🌱", name: "Urad Dal" },
-  { emoji: "🍚", name: "Basmati Rice" },
-  { emoji: "🌾", name: "Wheat Atta" },
-];
-
 export default function HeroSection() {
   return (
     <section
@@ -41,8 +32,8 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pb-24 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* Left — Text */}
           <div>
@@ -111,11 +102,11 @@ export default function HeroSection() {
                 Chat on WhatsApp
               </a>
               <a
-                href="#services"
+                href="#packaging-examples"
                 id="hero-explore-cta"
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-[#2E7D32] border border-green-200 px-7 py-3.5 rounded-full text-base font-semibold shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1"
               >
-                Explore Services
+                View Packaging Examples
                 <ArrowRight className="w-4 h-4" />
               </a>
             </motion.div>
@@ -140,86 +131,20 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right — Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="relative hidden lg:flex flex-col items-center justify-center gap-5"
-          >
-            <div className="relative w-full max-w-lg">
-              {/* Decorative glow */}
-              <div
-                className="absolute inset-0 rounded-3xl opacity-25 blur-3xl pointer-events-none"
-                style={{ background: "radial-gradient(circle at 50% 60%, #4CAF50, transparent 70%)" }}
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+            <div className="overflow-hidden rounded-3xl border border-white/80 bg-white p-1.5 shadow-xl shadow-green-950/15 sm:p-2">
+              <Image
+                src="/packaging-hero-market.webp"
+                alt="Cream and forest-green pouches of rice and pulses on a shop display, with Your Brand Here on the center pouch"
+                width={1254}
+                height={1254}
+                sizes="(max-width: 543px) calc(100vw - 46px), (max-width: 1023px) 494px, (max-width: 1279px) calc(50vw - 65px), 575px"
+                className="block h-auto w-full rounded-[1.15rem]"
+                loading="eager"
+                fetchPriority="high"
               />
-
-              {/* Product mockup image */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="relative rounded-3xl overflow-hidden shadow-2xl border border-green-100/60 bg-gradient-to-br from-green-50 to-emerald-50"
-              >
-                <Image
-                  src="/packaging-hero-v4.png"
-                  alt="Premium branded food packaging bags – Toor Dal, Moong Dal, Chana Dal, Urad Dal, Rice, Atta"
-                  width={600}
-                  height={520}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-                {/* Bottom fade */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-16"
-                  style={{ background: "linear-gradient(to top, rgba(240,253,244,0.8), transparent)" }}
-                />
-              </motion.div>
-
-              {/* Floating badge — top left */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, x: -10 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ delay: 1.0 }}
-                className="absolute -top-4 -left-4 xl:-left-6 bg-white rounded-2xl px-3 py-2.5 xl:px-4 xl:py-3 shadow-xl border border-green-100 z-10"
-              >
-                <p className="font-bold text-xs xl:text-sm text-gray-800">100+ Happy Clients</p>
-                <p className="text-[11px] text-gray-500">across India</p>
-              </motion.div>
-
-              {/* Floating badge — bottom right */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8, x: 10 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ delay: 1.2 }}
-                className="absolute -bottom-4 -right-4 xl:-right-6 bg-white rounded-2xl px-3 py-2.5 xl:px-4 xl:py-3 shadow-xl border border-green-100 z-10"
-              >
-                <p className="font-bold text-xs xl:text-sm text-gray-800">Custom Branding</p>
-                <p className="text-[11px] text-gray-500">your logo &amp; design</p>
-              </motion.div>
             </div>
-
-            {/* Product type chips */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, duration: 0.6 }}
-              className="flex flex-wrap justify-center gap-2 w-full max-w-lg"
-            >
-              {products.map((p, i) => (
-                <motion.span
-                  key={p.name}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.1 + i * 0.08 }}
-                  className="inline-flex items-center gap-1.5 bg-white border border-green-200 text-[#2E7D32] text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm hover:shadow-md hover:border-green-400 transition-all duration-200 cursor-default"
-                >
-                  <span>{p.emoji}</span>
-                  {p.name}
-                </motion.span>
-              ))}
-            </motion.div>
-          </motion.div>
+          </div>
 
         </div>
       </div>
@@ -229,7 +154,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col lg:flex items-center gap-2"
       >
         <span className="text-xs text-gray-400 font-medium tracking-widest uppercase">Scroll</span>
         <motion.div
