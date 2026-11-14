@@ -12,10 +12,11 @@ export const CONTACT = {
 
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Why Choose Us", href: "#why-us" },
-  { label: "Our Process", href: "#process" },
-  { label: "Future Solutions", href: "#coming-soon" },
+  { label: "Packaging", href: "#packaging-examples" },
   { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Our Process", href: "#process" },
+  { label: "Why Choose Us", href: "#why-us" },
   { label: "Contact", href: "#contact" },
+  { label: "Future Solutions", href: "#coming-soon" },
 ];

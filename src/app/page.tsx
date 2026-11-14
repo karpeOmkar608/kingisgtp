@@ -14,16 +14,16 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <TrustHighlights />
-      <WhatWeDo />
-      <WhyChooseUs />
-      <HowItWorks />
       <ProductShowcase />
-      <ComingSoon />
-      <PrivateLabelBenefits />
       <AboutUs />
+      <WhatWeDo />
+      <HowItWorks />
+      <WhyChooseUs />
+      <TrustHighlights />
+      <PrivateLabelBenefits />
       <FAQ />
       <ContactSection />
+      <ComingSoon />
     </>
   );
 }

@@ -58,7 +58,7 @@ export default function ComingSoon() {
   return (
     <section
       id="coming-soon"
-      className="py-24 relative overflow-hidden"
+      className="py-12 sm:py-16 relative overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 50%, #1B5E20 100%)",
       }}
@@ -90,7 +90,7 @@ export default function ComingSoon() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-8"
         >
           <span className="inline-block px-4 py-1.5 bg-white/10 text-green-300 text-sm font-semibold rounded-full mb-5 border border-white/15 tracking-wide">
             🚀 Expanding Soon
@@ -111,7 +111,7 @@ export default function ComingSoon() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: 0.3, duration: 0.8 }}
-        className="flex flex-col gap-4 mb-14"
+          className="flex flex-col gap-4 mb-8"
       >
         <MarqueeRow items={row1} direction="left" />
         <MarqueeRow items={row2} direction="right" />
@@ -125,15 +125,6 @@ export default function ComingSoon() {
           transition={{ delay: 0.6, duration: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          {/* Quote card */}
-          <div className="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl px-7 py-5 max-w-xl text-center sm:text-left">
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed italic">
-              &ldquo;We&apos;re building a future where businesses can launch{" "}
-              <span className="text-white font-semibold not-italic">any product</span>{" "}
-              under their own brand — with professional packaging support.&rdquo;
-            </p>
-          </div>
-
           {/* CTA */}
           <a
             href={WHATSAPP_URL}

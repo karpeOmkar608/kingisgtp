@@ -1,13 +1,13 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Tag, TrendingUp, Award, Rocket, DollarSign, Zap } from "lucide-react";
+import { Tag, TrendingUp, DollarSign } from "lucide-react";
 
 const benefits = [
   {
     icon: Tag,
     title: "Build Your Brand",
-    desc: "Create a strong brand identity without investing in manufacturing infrastructure.",
+    desc: "Build recognition across your range with products sold under your own name.",
     color: "#2E7D32",
     bg: "#E8F5E9",
   },
@@ -19,32 +19,11 @@ const benefits = [
     bg: "#E3F2FD",
   },
   {
-    icon: Award,
-    title: "Professional Packaging",
-    desc: "Premium packaging that makes your products stand out on any shelf.",
-    color: "#6A1B9A",
-    bg: "#F3E5F5",
-  },
-  {
-    icon: Rocket,
-    title: "Scale Faster",
-    desc: "Increase production volumes instantly without additional capital expenditure.",
-    color: "#E65100",
-    bg: "#FFF3E0",
-  },
-  {
     icon: DollarSign,
-    title: "Increase Profit Margins",
-    desc: "Branded products command premium pricing — improving your bottom line.",
+    title: "Set Your Retail Pricing",
+    desc: "Position and price your own range for the customers and channels you serve.",
     color: "#00695C",
     bg: "#E0F2F1",
-  },
-  {
-    icon: Zap,
-    title: "Launch Quickly",
-    desc: "Go from idea to market-ready product in weeks — not months.",
-    color: "#D97706",
-    bg: "#FEF3C7",
   },
 ];
 
